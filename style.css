@@ -99,6 +99,7 @@ section {
 .header-phone {
     text-align: right;
 }
+
 .header__phone {
     display: flex;
     flex-direction: column;
@@ -130,6 +131,7 @@ section {
 
 .social {
     list-style: none;
+    padding: 0;
 }
 
 .header__social {
@@ -137,11 +139,14 @@ section {
     right: 16px;
     top: 50%;
     transform: translateY(-50%);
-    margin: 0;
-    padding: 0;
+    margin: 0;  
 }
 
-.social__item:not(:last-child) {
+.social__item:hover {
+    transform: scale(1.1);
+}
+
+.social__item_vertical:not(:last-child) {
     margin-bottom: 18px;
 }
 
@@ -194,6 +199,7 @@ section {
     font-size: 12px;
     text-align: center;
     outline: 0;
+    cursor: pointer;
 }
 .btn:hover {
     background-color: #e27554;
@@ -384,7 +390,6 @@ section {
 }
 
 /* ---Price ---- */
-
 .price-box {
     max-width: 1015px;
 }
@@ -466,6 +471,7 @@ section {
     overflow: hidden;
     border-radius: 8px;
     position: relative;
+    cursor: pointer;
 }
 
 .master__img {
@@ -499,7 +505,6 @@ section {
     top: 0;
     bottom: 0;
     z-index: 2;
-    cursor: pointer;
 }
 
 .master__name {
@@ -525,6 +530,221 @@ section {
 .master__profession {
     margin-top: 8px;
 }
+/* --- Portfolio ---- */
+
+.portfolio__top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.portfolio__buttons {
+    display: flex;
+}
+
+.portfolio__btn {
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    border: none;
+    background-color: transparent;
+    position: relative;
+    cursor: pointer;
+}
+
+.portfolio__btn:hover {
+    background-color: #f8f6f7;
+}
+
+.portfolio__btn::after {
+    content: "";
+    width: 17px;
+    height: 14px;
+    background-image: url(./images/paginator.svg);
+    background-size: cover;
+    position: absolute;
+    top: 50%;
+    right: 50%;
+    transform: translateX(50%) translateY(-50%);
+}
+
+.portfolio__btn_back {
+    transform: rotate(180deg);
+    margin-right: 16px;
+}
+
+.portfolio__box {
+    margin-top: 52px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 29px;
+}
+
+.portfolio__item {
+    position: relative;
+    width: 338px;
+    height: 338px;
+    border-radius: 8px;
+    overflow: hidden;
+    transition: 0.15s;
+    cursor: pointer;
+}
+
+.portfolio__item:hover {
+    transform: scale(1.1);
+}
+
+.portfolio__img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.portfolio__overlay {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+}
+
+.portfolio__overlay:hover {
+    background: #000;
+    opacity: 0.5;
+}
+
+.portfolio__item:hover::before {
+    content: "";
+    position: absolute;
+    width: 48px;
+    height: 48px;
+    background: url(./images/icon-search.svg) no-repeat;
+    background-size: contain;
+    right: 50%;
+    transform: translateX(50%);
+    top: 149px;
+    z-index: 3;
+}
+
+.portfolio__item:hover::after {
+    content: "Увеличить";
+    position: absolute;
+    color: #fff;
+    text-align: center;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 17px;
+    top: 205px;
+    right: 50%;
+    transform: translateX(50%);
+}
+
+/* --- Brands ---- */
+.brands__description {
+    text-align: center;
+    line-height: 19px;
+    margin-bottom: 40px;
+}
+
+.brands__box {
+    display: flex;
+    justify-content: center;
+}
+.brands__logo {
+    width: 160px;
+    height: 65px;
+    object-fit: contain;
+    opacity: 0.3;
+}
+
+.brands__logo:not(:last-child) {
+    margin-right: 30px;
+}
+
+/* --- Contacts ---- */
+.contact-gray {
+    background-color: #e5e5e5;
+}
+
+.contact__box {
+    max-width: 1015px;
+    padding: 40px 0 40px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.contact-form {
+    max-width: 445px;
+    background-color: #fff;
+    border-radius: 8px;
+    filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.15));
+}
+
+.contact-form__box {
+    padding: 40px 40px;
+}
+
+.contact-form__title {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+
+.contact-form__subtitle {
+    font-size: 14px;
+    line-height: 20px;
+    margin-bottom: 35px;
+}
+
+.contact-form__input {
+    width: 100%;
+    font-size: 14px;
+    padding: 15px 0 15px 16px;
+    border-radius: 10px;
+    border: 1px solid #d8d8d8;
+    outline: none;
+    margin-bottom: 20px;
+}
+
+.btn_long {
+    width: 100%;
+    font-size: 14px;
+    padding: 17px 0 17px;
+    margin-bottom: 16px;
+}
+
+.contact-form__approval {
+    font-size: 12px;
+    font-weight: 300;
+    line-height: 14px;
+}
+
+.contact__title {
+    margin-top: 38px;
+    margin-bottom: 32px;
+}
+
+.contact__link {
+    display: block;
+    margin-top: 20px;
+}
+.contact__link:nth-child(2) {
+    color: #333;
+}
+
+.contact__social {
+    display: flex;
+    gap: 0 24px;
+    position: relative;
+    margin-top: 58px;
+}
+
+.contact__social:before {
+    content: "Мы в социальных сетях";
+    position: absolute;
+    font-size: 12px;
+    line-height: 14px;
+    top: -26px;
+}
 
 /* ------ Footer ------- */
 .footer__container {
@@ -535,12 +755,17 @@ section {
     align-items: center;
 }
 
-.footer__link {
+.link {
     font-size: 14px;
     color: #278aff;
     text-decoration: underline;
     text-underline-position: under;
 }
+
+.link_large {
+    font-size: 16px;
+}
+
 .footer__copyright {
     font-size: 12px;
     margin-bottom: 8px;
