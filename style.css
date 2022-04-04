@@ -9,6 +9,7 @@ html {
 }
 
 body {
+    min-width: 320px;
     font-size: 16px;
     font-family: "Montserrat", sans-serif;
     color: #333;
@@ -75,11 +76,15 @@ section {
     color: #333;
 }
 
+.mobile-menu {
+    display: none;
+} 
+
 .navigation__list {
     list-style: none;
     padding: 0;
     margin: 0;
-    display: flex;
+    display: flex; 
 }
 
 .navigation__item:not(:last-child) {

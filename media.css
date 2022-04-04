@@ -1,0 +1,173 @@
+/* Large Devices, Wide Screens */ 
+@media only screen and (max-width: 1280px) {
+    
+} 
+/* Medium Devices, Desktops */ 
+@media only screen and (max-width: 992px) { 
+    .header__girl {
+        opacity: 0.5;
+    }
+    .header__top {
+        flex-wrap: wrap;
+        gap: 15px 15px;
+    }
+    
+} 
+/* Small Devices, Tablets */ 
+@media only screen and (max-width: 768px) {
+    .header__girl {
+        display: none;;
+    }
+
+    .header__content {
+        display: flex;
+        justify-content: center;
+        text-align: center;
+    }
+
+    .header__social {
+        display: flex;
+        top: 90%;
+        right: 50%;
+        transform: translateX(50%);
+        gap: 0 24px;
+    }
+
+    .header__logo {
+        padding-left: 50px;
+    }
+
+    .hero {
+        flex-direction: column;
+    }
+
+    .header__nav {
+        display: none;
+    }
+
+    .mobile-menu {
+        display: block;
+    }
+    .mobile-menu {
+        position: absolute;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        padding: 0 15px;
+        top: 0;
+        left: 0;
+        height: 50px;
+        z-index: 4;
+    }
+
+    .mobile-menu__btn {
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 35px;
+        height: 30px;
+        top: 18px;
+        cursor: pointer;
+        transition: .4s;
+        z-index: 5;
+    }
+
+    .mobile-menu__icon {
+        display: block;
+        position: relative;
+        background: #808080;
+        width: 90%;
+        height: 4px;
+        transition: .4s;
+    }
+
+    .mobile-menu__icon::after, .mobile-menu__icon::before {
+        content: "";
+        display: block;
+        position: absolute;
+        background: #808080;
+        width: 100%;
+        height: 4px;
+        transition: .4s;
+    }
+
+    .mobile-menu__icon::after {
+        top: 8px;
+    }
+
+    .mobile-menu__icon::before {
+        top: -8px;
+    }
+
+    .mobile-menu__container {
+        position: fixed;
+        text-align: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 3;
+        height: 0;
+        opacity: 1;
+        transition: .5s;
+        overflow: hidden;
+        background-color: #fb9475;
+    }
+
+    .mobile-menu__list {
+        transition: .5s;
+        list-style: none;
+        padding-left: 0;
+        margin-top: -50px;
+    }
+
+    .mobile-menu__item {
+        font-size: 38px;
+        padding-bottom: 28px;
+    }
+
+    .mobile-menu__link {
+        text-decoration: none;
+        color: #fff;
+    }
+
+    .mobile-menu__checkbox {
+        display: none;
+    }
+
+    .mobile-menu__checkbox:checked ~ .mobile-menu__nav {
+        opacity: 1;
+    }
+
+    .mobile-menu__checkbox:checked ~ .mobile-menu__container {
+        height: 100%;
+    }
+
+    .mobile-menu__checkbox:checked ~ .mobile-menu__btn .mobile-menu__icon {
+        background: transparent;
+    }
+
+    .mobile-menu__checkbox:checked ~ .mobile-menu__btn .mobile-menu__icon::before, .mobile-menu__checkbox:checked ~ .mobile-menu__btn .mobile-menu__icon::after {
+        top: 0;
+    }
+
+    .mobile-menu__checkbox:checked ~ .mobile-menu__btn .mobile-menu__icon::after {
+        transform: rotate(-45deg);
+        background-color: #fff;
+    }
+
+    .mobile-menu__checkbox:checked ~ .mobile-menu__btn .mobile-menu__icon::before {
+        transform: rotate(45deg);
+        background-color: #fff;
+    }
+}
+
+/* Extra Small Devices, Phones */ 
+@media only screen and (max-width: 480px) { 
+} 
+/* Custom, iPhone Retina */ 
+@media only screen and (max-width: 320px) { 
+}
