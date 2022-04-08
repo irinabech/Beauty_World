@@ -218,6 +218,19 @@ section {
         display: flex; 
     }
 
+    &__list_mobile {
+        @include _480 {
+            flex-direction: column;
+        }
+    }
+
+    &__list_wrap {
+        @include _620 {
+            flex-wrap: wrap;
+            gap: 5px;
+        }
+    }
+
     &__item:not(:last-child) {
         margin-right: 28px;
     }
@@ -270,6 +283,10 @@ section {
         font-size: 36px;
         line-height: 44px;
     }
+
+    @include _620() {
+        text-align: center;
+    }
 }
 
 .btn {
@@ -302,49 +319,9 @@ section {
     }
 }
 
-.about { 
-    &__box {
-        display: flex;
-    }
-    
-    &__title {
-        margin-bottom: 32px;
-    }
-    
-    &__subtitle {
-        max-width: 569px;
-        font-size: 20px;
-        line-height: 32px;
-        padding-bottom: 16px;
-    }
-    
-    &__text {
-        max-width: 538px;
-        line-height: 26px;
-        padding-bottom: 16px;
-    }
-    
-    &__content {
-        margin-right: 95px;
-    }
-
-    &__videobox {
-        position: relative;
-    }
-
-    &__btn {
-        padding: 0 0;
-        color: $blue;
-        background-color: transparent;
-        border: none;
-        font-size: $mittel;
-        cursor: pointer;
-    }
-}
-
 .videobox {
     padding: 0 0;
-    width: 445px;
+    max-width: 445px;
     height: 297px;
     border-radius: 10px;
     overflow: hidden;
@@ -401,13 +378,64 @@ section {
     }
 }
 
-.privilege {
-    &__column {
-    max-width: 350px;
+.about { 
+    &__box {
+        display: flex;
+
+        @include _768() {
+            flex-direction: column;
+            align-items: center;
+        }
+    }
+    
+    &__title {
+        margin-bottom: 32px;
+    }
+    
+    &__subtitle {
+        max-width: 569px;
+        font-size: 20px;
+        line-height: 32px;
+        padding-bottom: 16px;
+    }
+    
+    &__text {
+        max-width: 538px;
+        line-height: 26px;
+        padding-bottom: 16px;
+    }
+    
+    &__content {
+        margin-right: 95px;
+
+        @include _768() {
+            margin: 0 auto 20px;
+        }
     }
 
-    &__column:not(:last-child) {
-        margin-right: 30px;
+    &__videobox {
+        position: relative;
+    }
+
+    &__btn {
+        padding: 0 0;
+        color: $blue;
+        background-color: transparent;
+        border: none;
+        font-size: $mittel;
+        cursor: pointer;
+    }
+}
+
+.privilege {
+    &__column {
+        max-width: 350px;
+        min-width: 250px;
+    }
+
+    &__box {
+        gap: 20px 30px;
+        justify-content: space-around;
     }
 
     &__title,
@@ -440,6 +468,10 @@ section {
         display: flex;
         flex-wrap: wrap;
         gap: 48px 30px;
+
+        @include _992(){
+            justify-content: space-around;
+        }
     }
 
     &__column {
@@ -482,6 +514,11 @@ section {
             font-size: 18px;
             font-weight: 500;
             margin-bottom: 8px;
+
+            @include _480() {
+                font-size: 16px;
+                
+            }
         }
 
         &__text {
@@ -492,6 +529,12 @@ section {
             font-size: 20px;
             font-weight: 600;
             color: $green;
+            white-space: nowrap;
+
+            @include _480() {
+                font-size: 18px;
+                padding-left: 10px;
+            }
         } 
 
         &__column {
@@ -507,6 +550,11 @@ section {
 
     &__box {
         gap: 0 125px;
+
+        @include _768() {
+            gap: 32px;
+            flex-direction: column;
+        }
     }
 
     .price-box__item:not(:last-child),
@@ -531,12 +579,20 @@ section {
     
     &__subtitle {
         margin-bottom: 24px;
+
+        @include _620 () {
+            text-align: center;
+        }
     }
     
     &__box {
         display: flex;
         flex-wrap: wrap;
         gap: 20px 30px;
+
+        @include _992() {
+            justify-content: space-around;
+        }
     } 
     
     &_gray {
@@ -722,7 +778,6 @@ section {
     }
 }
 
-/* --- Brands ---- */
 .brands {
     &__description {
         text-align: center;
@@ -743,10 +798,6 @@ section {
         object-fit: contain;
         opacity: 0.3;
     }
-    
-    &__logo:not(:last-child) {
-        margin-right: 30px;
-    }
 }
 
 .contact {
@@ -759,6 +810,11 @@ section {
         padding: 40px 0 40px;
         display: flex;
         justify-content: space-between;
+
+        @include _768(){
+            flex-direction: column;
+            align-items: center;
+        }
     }
     
     &__title {
@@ -780,6 +836,10 @@ section {
         gap: 0 24px;
         position: relative;
         margin-top: 58px;
+
+        @include _768() {
+            justify-content: center;
+        }
     }
 
     &__social:before {
@@ -788,6 +848,13 @@ section {
         font-size: $cicero;
         line-height: $mittel;
         top: -26px;
+    }
+
+    &__content {
+        @include _768() {
+            text-align: center;
+            order: 2;
+        }
     }
 
     .contact-form {
@@ -837,6 +904,17 @@ section {
         display: flex;
         justify-content: space-between;
         align-items: center;
+
+        @include _620() {
+            flex-direction: column;
+        }
+    }
+
+    &__column {
+        @include _620() {
+            order: 2;
+            margin-top: 15px;
+        }
     }
     
     &__copyright {
