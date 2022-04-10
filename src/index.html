@@ -23,26 +23,26 @@
 
                     <nav class="navigation header__nav">
                         <ul class="navigation__list">
-                            <li class="navigation__item"><a href="#about" class="navigation__link">Услуги и цены</a></li>
+                            <li class="navigation__item"><a href="#price" class="navigation__link">Услуги и цены</a></li>
                             <li class="navigation__item"><a href="#masters" class="navigation__link">Мастера</a></li>
-                            <li class="navigation__item"><a href="#price" class="navigation__link">Наши работы</a></li>
-                            <li class="navigation__item"><a href="#portfolio" class="navigation__link">О нас</a></li>
-                            <li class="navigation__item"><a href="#contacts" class="navigation__link">Контакты</a></li>
+                            <li class="navigation__item"><a href="#porfolio" class="navigation__link">Наши работы</a></li>
+                            <li class="navigation__item"><a href="#about" class="navigation__link">О нас</a></li>
+                            <li class="navigation__item"><a href="#contact" class="navigation__link">Контакты</a></li>
                         </ul>
                     </nav>
 
                     <nav class="mobile-menu">
                         <input type="checkbox" id="checkbox" class="mobile-menu__checkbox">
                         <label for="checkbox" class="mobile-menu__btn"><div class="mobile-menu__icon"></div></label>
-                        <!-- <div class="mobile-menu__container">
-                            <ul class="mobile-menu__list">
-                                <li class="mobile-menu__item"><a href="#" class="mobile-menu__link">Услуги и цены</a></li>
-                                <li class="mobile-menu__item"><a href="#" class="mobile-menu__link">Мастера</a></li>
-                                <li class="mobile-menu__item"><a href="#" class="mobile-menu__link">Наши работы</a></li>
-                                <li class="mobile-menu__item"><a href="#" class="mobile-menu__link">О нас</a></li>
-                                <li class="mobile-menu__item"><a href="#" class="mobile-menu__link">Контакты</a></li>
+                        <div class="mobile-menu__container">
+                            <ul class="mobile-menu__list" id="link">
+                                <li class="mobile-menu__item"><a href="#price" class="mobile-menu__link">Услуги и цены</a></li>
+                                <li class="mobile-menu__item"><a href="#masters" class="mobile-menu__link">Мастера</a></li>
+                                <li class="mobile-menu__item"><a href="#portfolio" class="mobile-menu__link">Наши работы</a></li>
+                                <li class="mobile-menu__item"><a href="#about" class="mobile-menu__link">О нас</a></li>
+                                <li class="mobile-menu__item"><a href="#contact" class="mobile-menu__link">Контакты</a></li>
                             </ul>
-                        </div> -->
+                        </div>
                     </nav>
 
                     <div class="header-phone header__phone">
@@ -72,7 +72,7 @@
         <!----- Main ----->
         <main class="main">
 
-                <section class="about">
+                <section class="about" id="about">
                     <div class="container about__container">
                         <h2 class="about__title title">О салоне</h2>
                         <div class="about__box">
@@ -169,7 +169,7 @@
                     </div>  
                 </section>
 
-                <section class="price">
+                <section class="price" id="price">
                     <div class="container price__container">
                         <h2 class="price__title title">Услуги и цены</h2>
                         <nav class="price__navigation navigation ">
@@ -247,7 +247,7 @@
                     </div>
                 </section>
 
-                <section class="masters masters_gray">
+                <section class="masters masters_gray" id="masters">
                     <div class="container masters__container">
                         <h2 class="masters__title title">Мастера</h2>
                         <p class="masters__subtitle">Дружная команда настоящих профессионалов</p>
@@ -288,7 +288,7 @@
                     </div>
                 </section>
                 
-                <section class="portfolio">
+                <section class="portfolio" id="portfolio">
                     <div class="container">
                         <div class="portfolio__top">
                             <h1 class="portfolio__title title">Наши работы</h1>
@@ -331,7 +331,7 @@
                     </div>
                 </section>
 
-                <section class="contact contact_gray">
+                <section class="contact contact_gray" id="contact">
                     <div class="container">
                         <div class="contact__box">
                             <div class="contact__content">
@@ -387,6 +387,6 @@
             </div>
         </footer>
     </div>
-
+    <script src="./index.js"></script>
 </body>
 </html>

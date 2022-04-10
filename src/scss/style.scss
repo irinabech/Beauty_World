@@ -151,10 +151,10 @@ section {
 
 .mobile-menu {
     display: none;
-
+    
     @include _768() {
         display: block;
-        position: absolute;
+        position: fixed;
         display: flex;
         align-items: center;
         justify-content: flex-end;
@@ -208,6 +208,60 @@ section {
     &__checkbox {
         display: none;
     }
+
+    &__container {
+        position: fixed;
+        text-align: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 3;
+        height: 0;
+        opacity: 1;
+        transition: .5s;
+        overflow: hidden;
+        background-color: $white;
+    }
+
+    &__list {
+        transition: .5s;
+        list-style: none;
+        padding-left: 0;
+        margin-top: -50px;
+    }
+
+    &__item {
+        font-size: 38px;
+        padding-bottom: 28px;
+    }
+
+    &__link {
+        text-decoration: none;
+        color: $brown;
+    }
+
+    .active {
+        height: 100%;
+    }
+
+    // &__checkbox:checked ~ .mobile-menu__btn .mobile-menu__icon {
+    //     background: transparent;
+    // }
+
+    // &__checkbox:checked ~ .mobile-menu__btn .mobile-menu__icon::before, .mobile-menu__checkbox:checked ~ .mobile-menu__btn .mobile-menu__icon::after {
+    //     top: 0;
+    // }
+
+    // &__checkbox:checked ~ .mobile-menu__btn .mobile-menu__icon::after {
+    //     transform: rotate(-45deg);
+    // }
+
+    // &__checkbox:checked ~ .mobile-menu__btn .mobile-menu__icon::before {
+    //     transform: rotate(45deg);
+    // }
 }
 
 .navigation {
