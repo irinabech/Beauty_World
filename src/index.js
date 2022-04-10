@@ -11,3 +11,11 @@ window.onload = function () {
         menuMob.classList.toggle("active");
     };
 };
+
+$(document).ready(function () {
+    $(".portfolio__box").slick({
+        slidesToShow: 4,
+        prevArrow: ".portfolio__btn_back",
+        nextArrow: ".portfolio__btn__next",
+    });
+});
