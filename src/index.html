@@ -177,15 +177,16 @@
                         <h2 class="price__title title">Услуги и цены</h2>
                         <nav class="price__navigation navigation ">
                             <ul class="navigation__list navigation__list_mobile navigation__list_wrap">
-                                <li class="navigation__item"><a href="" class="navigation__link navigation_active">Стрижка и укладка</a></li>
-                                <li class="navigation__item"><a href="" class="navigation__link navigation_active">Косметология</a></li>
-                                <li class="navigation__item"><a href="" class="navigation__link navigation_active">Маникюр и педикюр</a></li>
-                                <li class="navigation__item"><a href="" class="navigation__link navigation_active">Макияж</a></li>
-                                <li class="navigation__item"><a href="" class="navigation__link navigation_active">Брови и ресницы</a></li>
-                                <li class="navigation__item"><a href="" class="navigation__link navigation_active">Массаж</a></li>
+                                <li class="navigation__item"><a class="navigation__link navigation_active" data-tabs-path="Styling">Стрижка и укладка</a></li>
+                                <li class="navigation__item"><a class="navigation__link navigation_active" data-tabs-path="Cosmetology">Косметология</a></li>
+                                <li class="navigation__item"><a class="navigation__link navigation_active" data-tabs-path="Manicure">Маникюр и педикюр</a></li>
+                                <li class="navigation__item"><a class="navigation__link navigation_active" data-tabs-path="Makeup">Макияж</a></li>
+                                <li class="navigation__item"><a class="navigation__link navigation_active" data-tabs-path="Eyebrows">Брови и ресницы</a></li>
+                                <li class="navigation__item"><a class="navigation__link navigation_active" data-tabs-path="Massage">Массаж</a></li>
                             </ul>
                         </nav>    
-                        <div class="price__box price-box">
+
+                        <div class="price__box price-box" data-tabs-target="Styling">
                             <div class="price-box__column">
                                 <div class="price-box__item">
                                     <div class="price-box__content">
@@ -244,6 +245,117 @@
                                         <p class="price-box__text">Короткие волосы</p>
                                     </div>
                                     <p class="price-box__price">3000 &#8381;</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="price__box price-box" data-tabs-target="Cosmetology">
+                            <div class="price-box__column">
+                                <div class="price-box__item">
+                                    <div class="price-box__content">
+                                        <h3 class="price-box__title">Чистка лица</h3>
+                                        <p class="price-box__text">Комбинированная</p>
+                                    </div>
+                                    <p class="price-box__price">1200 &#8381;</p>
+                                </div>
+                                <div class="price-box__item">
+                                    <div class="price-box__content">
+                                        <h3 class="price-box__title">Чистка лица</h3>
+                                        <p class="price-box__text">Механическая</p>
+                                    </div>
+                                    <p class="price-box__price">1200 &#8381;</p>
+                                </div>
+                                <div class="price-box__item">
+                                    <div class="price-box__content">
+                                        <h3 class="price-box__title">Миндальный пилинг</h3>
+                                        <p class="price-box__text">Пилинг</p>
+                                    </div>
+                                    <p class="price-box__price">1200 &#8381;</p>
+                                </div>
+                                <div class="price-box__item">
+                                    <div class="price-box__content">
+                                        <h3 class="price-box__title">Карбокситерапия</h3>
+                                        <p class="price-box__text">Пилинг</p>
+                                    </div>
+                                    <p class="price-box__price">1200 &#8381;</p>
+                                </div>     
+                            </div>
+                            <div class="price-box__column">
+                                <div class="price-box__item">
+                                    <div class="price-box__content">
+                                        <h3 class="price-box__title">Массаж лица</h1>
+                                        <p class="price-box__text">Классический</p>
+                                    </div>
+                                    <p class="price-box__price">1200 &#8381;</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="price__box price-box" data-tabs-target="Manicure">
+                            <div class="price-box__column">
+                                <div class="price-box__item">
+                                    <div class="price-box__content">
+                                        <h3 class="price-box__title">Маникюр</h3>
+                                        <p class="price-box__text">Классический</p>
+                                    </div>
+                                    <p class="price-box__price">1200 &#8381;</p>
+                                </div>
+                                <div class="price-box__item">
+                                    <div class="price-box__content">
+                                        <h3 class="price-box__title">Маникюр</h3>
+                                        <p class="price-box__text">Гелевое покрытие</p>
+                                    </div>
+                                    <p class="price-box__price">1200 &#8381;</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="price__box price-box" data-tabs-target="Makeup">
+                            <div class="price-box__column">
+                                <div class="price-box__item">
+                                    <div class="price-box__content">
+                                        <h3 class="price-box__title">Макияж</h3>
+                                        <p class="price-box__text">Вечерний</p>
+                                    </div>
+                                    <p class="price-box__price">1200 &#8381;</p>
+                                </div>
+                                <div class="price-box__item">
+                                    <div class="price-box__content">
+                                        <h3 class="price-box__title">Макияж</h3>
+                                        <p class="price-box__text">Дневной</p>
+                                    </div>
+                                    <p class="price-box__price">1200 &#8381;</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="price__box price-box" data-tabs-target="Eyebrows">
+                            <div class="price-box__column">
+                                <div class="price-box__item">
+                                    <div class="price-box__content">
+                                        <h3 class="price-box__title">Ламинирование</h3>
+                                        <p class="price-box__text">Брови</p>
+                                    </div>
+                                    <p class="price-box__price">1200 &#8381;</p>
+                                </div>
+                                <div class="price-box__item">
+                                    <div class="price-box__content">
+                                        <h3 class="price-box__title">Ламинирование</h3>
+                                        <p class="price-box__text">Брови + ресницы</p>
+                                    </div>
+                                    <p class="price-box__price">1200 &#8381;</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="price__box price-box" data-tabs-target="Massage">
+                            <div class="price-box__column">
+                                <div class="price-box__item">
+                                    <div class="price-box__content">
+                                        <h3 class="price-box__title">Массаж классический</h3>
+                                        <p class="price-box__text">Спина, шея, руки</p>
+                                    </div>
+                                    <p class="price-box__price">1200 &#8381;</p>
                                 </div>
                             </div>
                         </div>
@@ -306,28 +418,40 @@
                     <div class="portfolio__box">
 
                         <div class="portfolio__item">
-                            <!-- <div class="portfolio__overlay"></div> -->
-                            <a data-fancybox="gallery" href="./images/portfolio/card-1.jpg"><img  class="portfolio__img" src="./images/portfolio/card-1.jpg" alt=""></a>
+                        
+                            <a data-fancybox="gallery" href="./images/portfolio/card-1.jpg">
+                                <div class="portfolio__overlay"></div>
+                                <img  class="portfolio__img" src="./images/portfolio/card-1.jpg" alt="">
+                            </a>
+                            
                         </div>
 
                         <div class="portfolio__item">
-                            <!-- <div class="portfolio__overlay"></div> -->
-                            <a data-fancybox="gallery" href="./images/portfolio/card-2.jpg"><img  class="portfolio__img" src="./images/portfolio/card-2.jpg" alt=""></a>
+                            <a data-fancybox="gallery" href="./images/portfolio/card-2.jpg">
+                                <div class="portfolio__overlay"></div>
+                                <img  class="portfolio__img" src="./images/portfolio/card-2.jpg" alt="">
+                            </a>
                         </div>
 
                         <div class="portfolio__item">
-                            <!-- <div class="portfolio__overlay"></div> -->
-                            <a data-fancybox="gallery" href="./images/portfolio/card-3.jpg"><img  class="portfolio__img" src="./images/portfolio/card-3.jpg" alt=""></a>
+                            <a data-fancybox="gallery" href="./images/portfolio/card-3.jpg">
+                                <div class="portfolio__overlay"></div>
+                                <img  class="portfolio__img" src="./images/portfolio/card-3.jpg" alt="">
+                            </a>
                         </div>
 
                         <div class="portfolio__item">
-                            <!-- <div class="portfolio__overlay"></div> -->
-                            <a data-fancybox="gallery" href="./images/portfolio/card-4.jpg"><img  class="portfolio__img" src="./images/portfolio/card-4.jpg" alt=""></a>
+                            <a data-fancybox="gallery" href="./images/portfolio/card-4.jpg">
+                                <div class="portfolio__overlay"></div>
+                                <img  class="portfolio__img" src="./images/portfolio/card-4.jpg" alt="">
+                            </a>
                         </div>
 
-                        <div class="portfolio__item">
-                            <!-- <div class="portfolio__overlay"></div> -->
-                            <a data-fancybox="gallery" href="./images/portfolio/card-2.jpg"><img  class="portfolio__img" src="./images/portfolio/card-2.jpg" alt=""></a>
+                        <div class="portfolio__item">    
+                            <a data-fancybox="gallery" href="./images/portfolio/card-2.jpg">
+                                <div class="portfolio__overlay"></div>
+                                <img  class="portfolio__img" src="./images/portfolio/card-2.jpg" alt="">
+                            </a>
                         </div>
 
                     </div>
@@ -404,8 +528,8 @@
     </div>
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script> 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js"></script> 
     <script src="./index.js"></script>
     
 </body>
