@@ -246,22 +246,6 @@ section {
     .active {
         height: 100%;
     }
-
-    // &__checkbox:checked ~ .mobile-menu__btn .mobile-menu__icon {
-    //     background: transparent;
-    // }
-
-    // &__checkbox:checked ~ .mobile-menu__btn .mobile-menu__icon::before, .mobile-menu__checkbox:checked ~ .mobile-menu__btn .mobile-menu__icon::after {
-    //     top: 0;
-    // }
-
-    // &__checkbox:checked ~ .mobile-menu__btn .mobile-menu__icon::after {
-    //     transform: rotate(-45deg);
-    // }
-
-    // &__checkbox:checked ~ .mobile-menu__btn .mobile-menu__icon::before {
-    //     transform: rotate(45deg);
-    // }
 }
 
 .navigation {
@@ -406,6 +390,7 @@ section {
         background: url("../images/icon_play.svg") no-repeat center;
         z-index: 3;
         transition: 0.15s;
+        cursor: pointer;
     }
 
     &:after {
@@ -775,8 +760,6 @@ section {
     &__box {
         margin-top: 52px;
         display: flex;
-        justify-content: space-between;
-        gap: 29px;
     }
     
     &__item {
@@ -787,10 +770,6 @@ section {
         overflow: hidden;
         transition: 0.15s;
         cursor: pointer;
-    }
-
-    &__item:not(:first-child) {
-        margin-left: 29px ;
     }
     
     &__item:hover {
@@ -817,7 +796,7 @@ section {
         z-index: 3;
     }
     
-    &__item:hover::before {
+    &__overlay:hover::before {
         content: "";
         position: absolute;
         width: 48px;
@@ -831,7 +810,7 @@ section {
         
     }
     
-    &__item:hover::after {
+    &__overlay:hover::after {
         content: "Увеличить";
         position: absolute;
         color: $white;
@@ -843,6 +822,12 @@ section {
         right: 50%;
         transform: translateX(50%);
         z-index: 4;
+    }
+
+    .slick-track {
+        display: flex;
+        justify-content: space-between;
+        gap: 29px;
     }
 }
 
