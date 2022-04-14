@@ -658,9 +658,10 @@ section {
     }
     
     &__box {
-        margin-top: 52px;
+        max-width: 1440px;
+        margin: 52px auto;
         display: flex;
-        justify-content: space-between;
+        justify-content: space-around;
         gap: 29px;
     }
     
@@ -683,20 +684,9 @@ section {
         height: 100%;
         object-fit: cover;
     }
-    
-    &__overlay {
-        height: 100%;
-        width: 100%;
-        position: absolute;
-    }
-    
-    &__overlay:hover {
-        background: #000;
-        opacity: 0.5;
-    }
-    
+
     &__item:hover::before {
-        content: "";
+        content: "";    
         position: absolute;
         width: 48px;
         height: 48px;
@@ -709,20 +699,23 @@ section {
     }
     
     &__item:hover::after {
-        content: "Увеличить";
+        content: 'Увеличить';
         position: absolute;
-        color: $white;
-        text-align: center;
+        width: 100%;
+        height: 100%;
+        padding-top: 205px; 
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;      
         font-size: $mittel;
         font-weight: 500;
-        line-height: 17px;
-        top: 205px;
-        right: 50%;
-        transform: translateX(50%);
+        text-align: center;
+        background: rgba(0, 0, 0, 0.5);
+        color: $white;
     }
 }
 
-/* --- Brands ---- */
 .brands {
     &__description {
         text-align: center;
