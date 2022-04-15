@@ -18,7 +18,9 @@
   },
   "homepage": "https://github.com/irinabech/Beauty_World#readme",
   "dependencies": {
-    "normalize.css": "^8.0.1"
+    "@fancyapps/fancybox": "^3.5.7",
+    "normalize.css": "^8.0.1",
+    "slick-carousel": "^1.8.1"
   },
   "devDependencies": {
     "@babel/core": "^7.17.9",
