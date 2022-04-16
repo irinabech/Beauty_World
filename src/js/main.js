@@ -63,8 +63,27 @@ window.onload = function () {
         console.log(userData);
     }
 
-    //Slider
+    $(function () {
+        $("#extended-form").validate({
+            rules: {
+                name: {
+                    required: true,
+                    minlength: 2,
+                },
+            },
+            messages: {
+                name: {
+                    required: "Поле 'Имя' обязательно к заполнению",
+                    minlength: "Введите не менее 2-х символов в поле 'Имя'",
+                },
+                phone: {
+                    required: "Поле 'Телефон' обязательно к заполнению",
+                },
+            },
+        });
+    });
 
+    //Slider
     function init() {
         $(".portfolio__box").slick({
             slidesToShow: 4,

@@ -19,6 +19,7 @@
   "homepage": "https://github.com/irinabech/Beauty_World#readme",
   "dependencies": {
     "@fancyapps/fancybox": "^3.5.7",
+    "jquery-validation": "^1.19.3",
     "normalize.css": "^8.0.1",
     "slick-carousel": "^1.8.1"
   },
