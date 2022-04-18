@@ -1,11 +1,13 @@
 import $ from "jquery";
 import { Form } from "./forms/form";
+import ApiService from "./services/api-service";
 
 window.onload = function () {
     const link = document.getElementById("link");
     const menuBtn = document.getElementById("checkbox");
     const menuMob = document.querySelector(".mobile-menu__container");
     const form = document.getElementById("form");
+    const extendedForm = document.getElementById("extended-form");
     const priceBtn = document.querySelectorAll(".price__navigation ul>li>a");
     const priceBox = document.querySelectorAll(".price__box");
 
@@ -99,4 +101,26 @@ window.onload = function () {
     }
 
     $(document).ready(init);
+
+    //Extended Form
+    extendedForm.addEventListener("submit", getFormValue);
+
+    function getFormValue(event) {
+        event.preventDefault();
+        const name = extendedForm.querySelector('[name="name"]');
+        const phone = extendedForm.querySelector('[name="phone"]');
+        const masterId = extendedForm.querySelector('[name="masterId"]');
+        const serviceId = extendedForm.querySelector('[name="serviceId"]');
+        const visitDate = extendedForm.querySelector('[name="visitDate"]');
+
+        const formData = {
+            name: name.value,
+            phone: phone.value,
+            masterId: Number(masterId.value),
+            serviceId: Number(serviceId.value),
+            visitDate: visitDate.value,
+        };
+
+        ApiService.createOrder(formData);
+    }
 };

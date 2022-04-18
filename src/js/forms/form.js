@@ -6,13 +6,13 @@ export class Form {
         this.mastersSelect = this.formEl.elements.masterId;
         this.servicesSelect = this.formEl.elements.serviceId;
 
-        this._init();
-        this._bindEvents();
+        this.#_init();
+        this.#_bindEvents();
     }
 
     #_init() {
-        this._buildMastersSelect();
-        this._buildServicesSelect();
+        this.#_buildMastersSelect();
+        this.#_buildServicesSelect();
     }
 
     #_bindEvents() {
