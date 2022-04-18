@@ -105,7 +105,7 @@ window.onload = function () {
     //Extended Form
     extendedForm.addEventListener("submit", getFormValue);
 
-    function getFormValue(event) {
+    async function getFormValue(event) {
         event.preventDefault();
         const name = extendedForm.querySelector('[name="name"]');
         const phone = extendedForm.querySelector('[name="phone"]');
@@ -121,6 +121,13 @@ window.onload = function () {
             visitDate: visitDate.value,
         };
 
-        ApiService.createOrder(formData);
+        function toggleLoader() {
+            const loader = document.getElementById("loader");
+            loader.classList.toggle("hidden");
+        }
+
+        toggleLoader();
+        const response = await ApiService.createOrder(formData);
+        toggleLoader();
     }
 };
