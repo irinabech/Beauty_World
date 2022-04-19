@@ -11,6 +11,14 @@ window.onload = function () {
     const priceBtn = document.querySelectorAll(".price__navigation ul>li>a");
     const priceBox = document.querySelectorAll(".price__box");
 
+    //Mobile menu
+    menuBtn.onclick = function () {
+        menuMob.classList.toggle("active");
+    };
+    link.onclick = function () {
+        menuMob.classList.toggle("active");
+    };
+
     //Tabs
     for (let i = 0; i < priceBtn.length; i++) {
         priceBtn[i].addEventListener("click", (e) => {
@@ -42,51 +50,90 @@ window.onload = function () {
 
     tabsHandler("Styling"); // Default state
 
-    //Mobile menu
-    menuBtn.onclick = function () {
-        menuMob.classList.toggle("active");
-    };
-    link.onclick = function () {
-        menuMob.classList.toggle("active");
-    };
-
     //Form data
-    form.addEventListener("submit", formData);
 
-    function formData(event) {
-        event.preventDefault();
-        const userName = form.querySelector('[name="name"]');
-        const phone = form.querySelector('[name="phone"]');
-        const userData = {
-            name: userName.value,
-            phone: phone.value,
-        };
-
-        console.log(userData);
+    function success(form) {
+        const div = document.createElement("div");
+        div.className = "alert";
+        div.innerHTML =
+            "Ваша заявка отправлена! В ближайшее время с вами свяжется менеджер.";
+        form.append(div);
     }
 
-    $(function () {
-        $("#extended-form").validate({
-            rules: {
-                name: {
-                    required: true,
-                    minlength: 2,
-                },
-            },
-            messages: {
-                name: {
-                    required: "&laquo; Имя &raquo; обязательно к заполнению",
-                    minlength: "'Имя' должно содержать не менее 2-х символов",
-                },
-                phone: {
-                    required: "&laquo Телефон &raquo; обязателен к заполнению",
-                },
-            },
+    async function handleFormSubmit(event) {
+        event.preventDefault();
+        const name = applicantForm.querySelector('[name="name"]');
+        const phone = applicantForm.querySelector('[name="phone"]');
+        if (!name.checkValidity() || !phone.checkValidity()) {
+            return 0;
+        }
+        const formData = serializeForm(applicantForm);
+        const response = await ApiService.createOrder(formData);
+
+        if (response.ok) {
+            success(applicantForm);
+            setTimeout(function () {
+                applicantForm.reset();
+                applicantForm.getElementsByClassName("alert")[0].remove();
+            }, 3000);
+        }
+    }
+
+    function serializeForm(formNode) {
+        const { elements } = formNode;
+        const data = {};
+        const data_raw = Array.from(elements)
+            .filter((item) => !!item.name)
+            .map((element) => {
+                const { name, value } = element;
+
+                return { name, value };
+            });
+        data_raw.forEach(function (el) {
+            data[el["name"]] = el["value"];
         });
-    });
+
+        return data;
+    }
+
+    function createValidator(form) {
+        $(function () {
+            $(form).validate({
+                rules: {
+                    name: {
+                        required: true,
+                        minlength: 2,
+                    },
+                },
+                messages: {
+                    name: {
+                        required:
+                            "&laquo; Имя &raquo; обязательно к заполнению",
+                        minlength:
+                            "'Имя' должно содержать не менее 2-х символов",
+                    },
+                    phone: {
+                        required:
+                            "&laquo Телефон &raquo; обязателен к заполнению",
+                    },
+                },
+            });
+        });
+    }
+
+    const applicantForm = document.getElementById("form");
+    applicantForm.addEventListener("submit", handleFormSubmit);
+
+    createValidator("#form");
 
     $(document).ready(function () {
         $(mask).inputmask({ mask: "+7 (999) 999-99-99" });
+    });
+
+    createValidator("#extended-form");
+
+    $(document).ready(function () {
+        $(extendedMask).inputmask({ mask: "+7 (999) 999-99-99" });
     });
 
     //Slider
@@ -109,16 +156,10 @@ window.onload = function () {
         event.preventDefault();
         const name = extendedForm.querySelector('[name="name"]');
         const phone = extendedForm.querySelector('[name="phone"]');
-        const masterId = extendedForm.querySelector('[name="masterId"]');
-        const serviceId = extendedForm.querySelector('[name="serviceId"]');
-        const visitDate = extendedForm.querySelector('[name="visitDate"]');
-        const formData = {
-            name: name.value,
-            phone: phone.value,
-            masterId: Number(masterId.value),
-            serviceId: Number(serviceId.value),
-            visitDate: visitDate.value,
-        };
+        if (!name.checkValidity() || !phone.checkValidity()) {
+            return 0;
+        }
+        const formData = serializeForm(extendedForm);
 
         function toggleLoader() {
             const loader = document.getElementById("loader");
@@ -129,25 +170,15 @@ window.onload = function () {
         const response = await ApiService.createOrder(formData);
         toggleLoader();
 
-        function success() {
-            const div = document.createElement("div");
-            div.className = "alert";
-            div.innerHTML =
-                "Ваша заявка отправлена! В ближайшее время с вами свяжется менеджер.";
-            extendedForm.append(div);
-        }
-
         if (response.ok) {
-            success();
+            success(extendedForm);
             setTimeout(function () {
-                extendedForm.style.display = "none";
+                extendedForm
+                    .getElementsByClassName("fancybox-button")[0]
+                    .click();
+                extendedForm.reset();
+                extendedForm.getElementsByClassName("alert")[0].remove();
             }, 3000);
         }
-        // } else {
-        //     const divError = document.createElement("div");
-        //     divError.className = "error";
-        //     divError.innerHTML = "Ошибка!";
-        //     extendedForm.append(divError);
-        // }
     }
 };

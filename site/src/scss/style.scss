@@ -943,12 +943,34 @@ section {
             border-radius: 10px;
             border: 1px solid #d8d8d8;
             outline: none;
+        }
+
+        &__items {
+            display: flex;
+            flex-direction: column;
+            
+        }
+
+        &__item {
             margin-bottom: 20px;
         }
+        
         .approval {
             font-size: $cicero;
             font-weight: 300;
             line-height: $mittel;
+        }
+
+        input.error {
+            border: 1px solid #ff0000;
+        }
+        
+        label.error {
+            color: #ff0000;
+        }
+
+        .alert {
+            padding: 0 40px 40px;
         }
     }
 }
