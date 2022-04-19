@@ -112,7 +112,6 @@ window.onload = function () {
         const masterId = extendedForm.querySelector('[name="masterId"]');
         const serviceId = extendedForm.querySelector('[name="serviceId"]');
         const visitDate = extendedForm.querySelector('[name="visitDate"]');
-
         const formData = {
             name: name.value,
             phone: phone.value,
@@ -129,5 +128,21 @@ window.onload = function () {
         toggleLoader();
         const response = await ApiService.createOrder(formData);
         toggleLoader();
+
+        function success(formData) {
+            const div = document.createElement("div");
+            div.className = "alert";
+            div.innerHTML =
+                "Ваша заявка отправлена! В ближайшее время с вами свяжется менеджер.";
+            extendedForm.append(div);
+        }
+
+        if (response.ok) {
+            success();
+        }
+
+        setTimeout(function () {
+            extendedForm.style.display = "none";
+        }, 3000);
     }
 };

@@ -19,6 +19,6 @@ export class HttpService {
             },
         });
 
-        return response.json();
+        return response;
     }
 }
