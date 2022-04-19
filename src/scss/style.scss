@@ -910,6 +910,10 @@ section {
         }
     }
 
+    #extended-form {
+        display: none;
+    }
+
     .contact-form {
         max-width: 445px;
         background-color: $white;
@@ -917,9 +921,9 @@ section {
         filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.15));
 
         &__box {
-            padding: 40px 40px;
+            padding: 40px 40px;  
         }
-        
+
         &__title {
             font-size: 18px;
             font-weight: 600;
@@ -941,7 +945,7 @@ section {
             outline: none;
             margin-bottom: 20px;
         }
-        &__approval {
+        .approval {
             font-size: $cicero;
             font-weight: 300;
             line-height: $mittel;
@@ -986,8 +990,45 @@ section {
     }
 }
 
-.hidden {
-    visibility: hidden;
+.extended-form {
+    input, select {
+        width: 100%;
+        padding: 5px 5px 5px;
+        margin: 5px auto 5px;
+        border-radius: 8px;
+        border-radius: 10px;
+        border: 1px solid #d8d8d8;
+        outline: none;
+    }
+
+    input.error {
+        border: 1px solid #ff0000;
+    }
+    
+    label.error {
+        color: #ff0000;
+        font-weight: normal;
+    }
+
+    .alert {
+        margin-top: 10px;
+    }
+
+    .loader {
+        font-weight: bold;
+        padding-bottom: 15px;
+
+        &_hidden {
+            visibility: hidden;
+        }   
+    }
+
+    &__item {
+            display: flex;
+            flex-direction: column;
+            padding-bottom: 15px;
+        }
+    
 }
 
 @import "./media";

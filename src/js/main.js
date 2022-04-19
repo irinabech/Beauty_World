@@ -75,11 +75,11 @@ window.onload = function () {
             },
             messages: {
                 name: {
-                    required: "'Имя' обязательно к заполнению",
+                    required: "&laquo; Имя &raquo; обязательно к заполнению",
                     minlength: "'Имя' должно содержать не менее 2-х символов",
                 },
                 phone: {
-                    required: "'Телефон' обязателен к заполнению",
+                    required: "&laquo Телефон &raquo; обязателен к заполнению",
                 },
             },
         });
@@ -122,14 +122,14 @@ window.onload = function () {
 
         function toggleLoader() {
             const loader = document.getElementById("loader");
-            loader.classList.toggle("hidden");
+            loader.classList.toggle("loader_hidden");
         }
 
         toggleLoader();
         const response = await ApiService.createOrder(formData);
         toggleLoader();
 
-        function success(formData) {
+        function success() {
             const div = document.createElement("div");
             div.className = "alert";
             div.innerHTML =
@@ -139,10 +139,15 @@ window.onload = function () {
 
         if (response.ok) {
             success();
+            setTimeout(function () {
+                extendedForm.style.display = "none";
+            }, 3000);
         }
-
-        setTimeout(function () {
-            extendedForm.style.display = "none";
-        }, 3000);
+        // } else {
+        //     const divError = document.createElement("div");
+        //     divError.className = "error";
+        //     divError.innerHTML = "Ошибка!";
+        //     extendedForm.append(divError);
+        // }
     }
 };
