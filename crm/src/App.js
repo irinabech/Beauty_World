@@ -1,24 +1,47 @@
+import React, { useEffect } from "react";
 import "./App.css";
 import { Routes, Route, Link } from "react-router-dom";
-import { LoginPage } from "./features/login/LoginPage";
-import { OrderPage } from "./features/orders/OrdersPage";
+import { OrderPage } from "./pages/orders/OrdersPage";
+import { LoginPage } from "./pages/login/LoginPage";
+
+import { useAuth } from "./context/AuthContext";
+import { PrivateRoute } from "./components";
+import { CustomersApi } from "./api";
 
 export default function App() {
-    return (
-        <div>
-            <h1>Welcome to React Router!</h1>
+    const { isAuth, logout } = useAuth();
 
-            <ul>
-                <li>
-                    <Link to="/">Заявки</Link>
-                </li>
-                <li>
-                    <Link to="/login">Авторизация</Link>
-                </li>
-            </ul>
+    useEffect(() => {
+        CustomersApi.getCustomers().then((list) => console.log(list));
+    }, []);
+
+    return (
+        <div className="container">
+            {isAuth && (
+                <nav>
+                    <ul>
+                        <li>
+                            <Link to="/">Home</Link>
+                        </li>
+                        <li>
+                            <Link to="/login">Login</Link>
+                        </li>
+                    </ul>
+
+                    <button onClick={logout}>Logout</button>
+                </nav>
+            )}
 
             <Routes>
-                <Route path="/" element={<OrderPage />} />
+                <Route
+                    path="/"
+                    element={
+                        <PrivateRoute>
+                            <OrderPage />
+                        </PrivateRoute>
+                    }
+                />
+
                 <Route path="login" element={<LoginPage />} />
             </Routes>
         </div>
