@@ -51,7 +51,7 @@ export function OrderPage () {
                 return <SearchOutlined />;
             },
             onFilter: (value, record) => {
-                return record.customer.firstName.toLowerCase().includes(value.toLowerCase())
+                return record.customer.fullName.toLowerCase().includes(value.toLowerCase())
             },
             render: customer => `${customer? customer.fullName : null}`
         },

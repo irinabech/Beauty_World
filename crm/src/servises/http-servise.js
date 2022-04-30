@@ -1,4 +1,4 @@
-import { API_PATH } from "../constants";
+import { API_PATH } from "../common/constants";
 import TokenService from "../servises/token-service";
 import pubsubService from "./pubsub-service";
 
