@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Modal, Button, Input, InputNumber, Select, Form, DatePicker} from 'antd';
 import  { MastersApi, ServicesApi, OrdersApi } from "../../api";
+import moment from 'moment';
 
 
 const CreateOrders = (kwargs) => {
@@ -46,9 +47,7 @@ const CreateOrders = (kwargs) => {
         } else {
             response = await OrdersApi.createOrders(formData);
         }
-        if (response.ok) {
-            console.log("Успех")
-        }
+        window.location.reload();
     }
 
     const handleOk = () => {
@@ -132,7 +131,11 @@ const CreateOrders = (kwargs) => {
 
                 
                     <Form.Item label="Дата визита">
-                        <DatePicker id="visitDate"/>
+                        <DatePicker
+                            id="visitDate"
+                            format="YYYY-MM-DDTHH:mm:ss.zzzZ"
+                            showTime={{ defaultValue: moment('00:00:00', 'HH:mm:ss') }}
+                        />
                     </Form.Item>
 
                     <Form.Item
