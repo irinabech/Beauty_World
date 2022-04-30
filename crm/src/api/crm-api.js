@@ -1,6 +1,6 @@
-import { HttpService } from "../services/http-service";
+import { HttpService } from "../servises/http-servise";
 
-export class MastersApi extends HttpService {
+class MastersApi extends HttpService {
     constructor() {
         super("staff");
     }

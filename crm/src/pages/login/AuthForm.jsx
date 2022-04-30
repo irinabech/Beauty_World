@@ -1,5 +1,6 @@
 import { useInput } from '../../hooks';
 
+
 export default function AuthForm({ onLogin }) {
     const loginInput = useInput();
     const passwordInput = useInput();
@@ -35,5 +36,6 @@ export default function AuthForm({ onLogin }) {
         <br />
         <button>Войти</button>
       </form>
+    
     );
   }
