@@ -1,6 +1,10 @@
 import { Navigate } from "react-router-dom";
 import { useAuth } from "../../context/AuthContext";
 import AuthForm from "./AuthForm";
+import {  Typography } from 'antd';
+import "../../App.css";
+
+const { Title } = Typography;
 
 export function LoginPage() {
     const { isAuth, login } = useAuth();
@@ -9,8 +13,9 @@ export function LoginPage() {
         return <Navigate to="/" />;
     }
 
-    return (<>
-        <h1>Login Page</h1>
-        <AuthForm onLogin={login} />
-    </>)
+    return (
+        <div className="container-login">  
+            <Title align="center">Авторизация</Title>
+            <AuthForm onLogin={login} />
+        </div>)
 }

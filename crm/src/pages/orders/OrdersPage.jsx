@@ -1,10 +1,12 @@
 
 import React, { useState, useEffect } from "react";
-import { Table, Modal, Input, Button, Space, Popconfirm, Typography } from 'antd';
+import { Table, DatePicker, Input, Button, Space, Popconfirm, Typography } from 'antd';
 import 'antd/dist/antd.css';
 import  OrdersApi from "../../api/orders-api";
 import CreateOrders from "./CreateOrders";
 import {SearchOutlined} from "@ant-design/icons"
+import moment from 'moment';
+
 const { Title } = Typography;
 
 
@@ -63,7 +65,7 @@ export function OrderPage () {
             title: 'Мастер',
             dataIndex: 'master',
             key: 'master',
-            render: master => `${master? master.fullName : null} - опыт работы ${master? getDataDiff(master.startWorkDate) : null} дней`
+            render: master => `${master? master.fullName : null} - опыт работы ${master? getDataDiff(master.startWorkDate) : null} день`
         },{
             title: 'Услуга',
             dataIndex: 'service',
@@ -74,6 +76,33 @@ export function OrderPage () {
             title: 'Дата визита',
             dataIndex: 'visitDate',
             key: 'visitDate',
+            filterDropdown: ({setDateStart, dateStart, confirm, clearFilters}) => {
+                return (<>
+                    <DatePicker.RangePicker
+                        id="dateRange"
+                        format="YYYY-MM-DDTHH:mm:ss.zzzZ"
+                        showTime={{ defaultValue: moment('00:00:00', 'HH:mm:ss') }}
+                        start={dateStart}
+                        onChange={(e) => {
+                            setDateStart(e.length > 1 ?[e[0]]:[]);
+                            confirm({ closeDropdown: false });
+                        }}
+                    ></DatePicker.RangePicker>
+                    <Button
+                        onClick={() => {confirm()}} 
+                        type='primary'>Поиск
+                    </Button>
+                    <Button
+                        onClick={() => {clearFilters()}} 
+                        type='danger'>Очистить
+                    </Button>
+                    </>
+                );
+            },
+            filterIcon: () => {
+                return <SearchOutlined />;
+            },
+            render: visitDate => `${visitDate? visitDate : null}`
         },
         {
             title: 'Статус заявки',
