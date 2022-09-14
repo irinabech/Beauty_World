@@ -758,8 +758,12 @@ section {
     }
 
     &__box {
-        margin-top: 52px;
+        max-width: 1440px;
+        margin: 52px auto;
         display: flex;
+
+        justify-content: space-around;
+        gap: 29px;
     }
     
     &__item {
@@ -781,7 +785,7 @@ section {
         height: 100%;
         object-fit: cover;
     }
-    
+ 
     &__overlay {
         height: 100%;
         width: 100%;
@@ -798,6 +802,9 @@ section {
     
     &__overlay:hover::before {
         content: "";
+
+    &__item:hover::before {
+        content: "";    
         position: absolute;
         width: 48px;
         height: 48px;
@@ -810,13 +817,19 @@ section {
         
     }
     
+
     &__overlay:hover::after {
         content: "Увеличить";
+
+    &__item:hover::after {
+        content: 'Увеличить';
         position: absolute;
-        color: $white;
-        text-align: center;
+        width: 100%;
+        height: 100%;
+        padding-top: 205px;      
         font-size: $mittel;
         font-weight: 500;
+
         line-height: 17px;
         top: 205px;
         right: 50%;
@@ -828,6 +841,10 @@ section {
         display: flex;
         justify-content: space-between;
         gap: 29px;
+
+        text-align: center;
+        background: rgba(0, 0, 0, 0.5);
+        color: $white;
     }
 }
 
