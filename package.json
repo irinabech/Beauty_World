@@ -1,0 +1,35 @@
+{
+  "name": "beauty_world-1",
+  "version": "1.0.0",
+  "description": "Бечёнкина Ирина Владимировна",
+  "main": "index.js",
+  "scripts": {
+    "start": "gulp",
+    "build": "gulp build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/irinabech/Beauty_World.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/irinabech/Beauty_World/issues"
+  },
+  "homepage": "https://github.com/irinabech/Beauty_World#readme",
+  "dependencies": {
+    "normalize.css": "^8.0.1"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.4.4",
+    "browser-sync": "^2.27.9",
+    "cssnano": "^5.1.7",
+    "del": "^6.0.0",
+    "gulp": "^4.0.2",
+    "gulp-postcss": "^9.0.1",
+    "gulp-sass": "^5.1.0",
+    "gulp-sourcemaps": "^3.0.0",
+    "postcss": "^8.4.12",
+    "sass": "^1.49.11"
+  }
+}

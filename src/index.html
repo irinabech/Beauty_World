@@ -2,17 +2,17 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Мир красоты</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap-grid.min.css">
-    <link rel="stylesheet" href="https://necolas.github.io/normalize.css/8.0.1/normalize.css">
-    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./css/style.css">
 </head>
 <body>
-    
+
     <div class="wrapper">
         <!----- Header ----->
         <header class="header">
@@ -31,6 +31,20 @@
                         </ul>
                     </nav>
 
+                    <nav class="mobile-menu">
+                        <input type="checkbox" id="checkbox" class="mobile-menu__checkbox">
+                        <label for="checkbox" class="mobile-menu__btn"><div class="mobile-menu__icon"></div></label>
+                        <!-- <div class="mobile-menu__container">
+                            <ul class="mobile-menu__list">
+                                <li class="mobile-menu__item"><a href="#" class="mobile-menu__link">Услуги и цены</a></li>
+                                <li class="mobile-menu__item"><a href="#" class="mobile-menu__link">Мастера</a></li>
+                                <li class="mobile-menu__item"><a href="#" class="mobile-menu__link">Наши работы</a></li>
+                                <li class="mobile-menu__item"><a href="#" class="mobile-menu__link">О нас</a></li>
+                                <li class="mobile-menu__item"><a href="#" class="mobile-menu__link">Контакты</a></li>
+                            </ul>
+                        </div> -->
+                    </nav>
+
                     <div class="header-phone header__phone">
                         <a href="tel:84996861762" class="header-phone__number">8 (499) 686-17-62</a>
                         <span class="header-phone__schedule">с 10.00 до 19.00 без выходных</span>
@@ -44,10 +58,10 @@
                         <button class="btn btn_large">Записаться онлайн</button>
                     </div>
 
-                    <ul class="social social_vertical header__social">
-                        <li class="social__item"><a href="#" class="social__link"><img src="./images/icon_vk.svg" alt="Vk"></a></li>
-                        <li class="social__item"><a href="#" class="social__link"><img src="./images/icon_instagram.svg" alt="Instagram"></a></li>
-                        <li class="social__item"><a href="#" class="social__link"><img src="./images/icon_yotube.svg" alt="Youtube"></a></li>
+                    <ul class="social header__social">
+                        <li class="social__item social__item_vertical"><a href="#" class="social__link"><img src="./images/icon_vk.svg" alt="Vk"></a></li>
+                        <li class="social__item social__item_vertical"><a href="#" class="social__link"><img src="./images/icon_instagram.svg" alt="Instagram"></a></li>
+                        <li class="social__item social__item_vertical"><a href="#" class="social__link"><img src="./images/icon_yotube.svg" alt="Youtube"></a></li>
                     </ul>
 
                     <div class="header__girl"></div>
@@ -112,7 +126,7 @@
                         <div class="popular__box">
                             <div class="popular__column card">
                                 <div class="card__photo">
-                                    <img  class="card_img"src="./images/Cards_services/card-1.png" alt="Маникюр"> 
+                                    <img  class="card_img"src="./images/cards_services/card-1.png" alt="Маникюр"> 
                                 </div>   
                                 <h3 class="card__title">Маникюр</h3>
                                 <p class="card__text">Аппаратный, комбинированный или классический.</p>
@@ -120,7 +134,7 @@
                             </div>
                             <div class="popular__column card">
                                 <div class="card__photo">
-                                    <img  class="card_img"src="./images/Cards_services/card-1.png" alt="Покрытие гель-лак"> 
+                                    <img  class="card_img"src="./images/cards_services/card-1.png" alt="Покрытие гель-лак"> 
                                 </div> 
                                 <h3 class="card__title">Покрытие гель-лак</h3>
                                 <p class="card__text">Гель-лак наносится в несколько слоев с использование базы и топа. Каждый слой полимеризуется в LED-лампе.</p>
@@ -128,7 +142,7 @@
                             </div>
                             <div class="popular__column card">
                                 <div class="card__photo">
-                                    <img  class="card_img"src="./images/Cards_services/card-1.png" alt="Бразильский маникюр">
+                                    <img  class="card_img"src="./images/cards_services/card-1.png" alt="Бразильский маникюр">
                                 </div>
                                 <h3 class="card__title">Бразильский маникюр</h3>
                                 <p class="card__text">Выполняется в одноразовых перчатках наполненных увлажняющим лосьоном.</p>
@@ -136,7 +150,7 @@
                             </div>
                             <div class="popular__column card">
                                 <div class="card__photo">
-                                    <img  class="card_img"src="./images/Cards_services/card-1.png" alt="Педикюр"> 
+                                    <img  class="card_img"src="./images/cards_services/card-1.png" alt="Педикюр"> 
                                 </div>
                                 <h3 class="card__title">Педикюр</h3>
                                 <p class="card__text">Аппаратный, комбинированный или классический.</p>
@@ -144,7 +158,7 @@
                             </div>
                             <div class="popular__column card">
                                 <div class="card__photo">
-                                    <img  class="card_img"src="./images/Cards_services/card-1.png" alt="Парафинотерапия"> 
+                                    <img  class="card_img"src="./images/cards_services/card-1.png" alt="Парафинотерапия"> 
                                 </div>   
                                 <h3 class="card__title">Парафинотерапия</h3>
                                 <p class="card__text">Благодаря этой процедуре увлажнение кожи увеличивается на 80%, также выводит токсины и укрепляет суставы.
@@ -272,7 +286,83 @@
                             </div>
                         </div>
                     </div>
-                </section> 
+                </section>
+                
+                <section class="portfolio">
+                    <div class="container">
+                        <div class="portfolio__top">
+                            <h1 class="portfolio__title title">Наши работы</h1>
+                            <div class="portfolio__buttons">
+                                <button class="portfolio__btn portfolio__btn_back"></button>
+                                <button class="portfolio__btn"></button>
+                            </div>
+                        </div>
+                    </div>    
+                    <div class="portfolio__box">
+                        <div class="portfolio__item">
+                            <img  class="portfolio__img" src="./images/portfolio/card-1.jpg" alt="">
+                        </div>
+                        <div class="portfolio__item">
+                            <img  class="portfolio__img" src="./images/portfolio/card-2.jpg" alt="">
+                        </div>
+                        <div class="portfolio__item">
+                            <img  class="portfolio__img" src="./images/portfolio/card-3.jpg" alt="">
+                        </div>
+                        <div class="portfolio__item">
+                            <img  class="portfolio__img" src="./images/portfolio/card-4.jpg" alt="">
+                        </div>
+                    </div>
+                </section>
+
+                <section class="brands">
+                    <div class="container">
+                        <p class="brands__description">Бренды, которые мы используем в работе </p>
+                        <div class="brands__box">
+                            <img src="./images/brands_logo/logo-1.png" alt="Wella" class="brands__logo">
+                            <img src="./images/brands_logo/logo-2.png" alt="Schwarzkopf" class="brands__logo">
+                            <img src="./images/brands_logo/logo-3.png" alt="TIGI" class="brands__logo">
+                            <img src="./images/brands_logo/logo-4.png" alt="Londa" class="brands__logo">
+                            <img src="./images/brands_logo/logo-5.png" alt="Nioxin" class="brands__logo">
+                        </div>
+                    </div>
+                </section>
+
+                <section class="contact contact_gray">
+                    <div class="container">
+                        <div class="contact__box">
+                            <div class="contact__content">
+                                <h1 class="contact__title title">Контакты</h1>
+                                <div class="contact__details">
+                                    <div class="contact__address">Томск, проспект Ленина, дом 13</div>
+                                    <a class="contact__link" href="tel:84996861762">8 (499) 686-17-62</a>
+                                    <a class="contact__link link link_large " href="mailto:info@more-krasoty.ru">info@more-krasoty.ru</a>
+                                    <ul class="social contact__social">
+                                        <li class="social__item"><a href="#" class="social__link"><img src="./images/icon_vk.svg" alt="Vk"></a></li>
+                                        <li class="social__item"><a href="#" class="social__link"><img src="./images/icon_instagram.svg" alt="Instagram"></a></li>
+                                        <li class="social__item"><a href="#" class="social__link"><img src="./images/icon_yotube.svg" alt="Youtube"></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <form class="contact-form" action="">
+                                    <div class="contact-form__box">
+                                        <div class="contact-form__title">
+                                            Быстрая запись
+                                        </div>
+                                        <div class="contact-form__subtitle">
+                                            Наш менеджер перезвонит в течение нескольких минут, уточнит подробности и согласует время.
+                                        </div>
+                                        <input class="contact-form__input" type="text" name="name" placeholder="Ваше имя" required>
+                                        <input class="contact-form__input" type="tel" name="phone" placeholder="+7 (___) ___-__-__" inputmode="tel" required>
+                                        <button class="btn btn_long">Записаться</button>
+                                        <div class="contact-form__approval">
+                                            Нажимая на кнопку вы соглашаетесь <a class="link" href="#" target="_blank">с обработкой персональных данных</a>
+                                        </div>
+                                    </div>
+                            </form>
+                            
+                        </div>
+                    </div>
+                </section>
         </main>
 
         <!----- Footer ----->
@@ -280,13 +370,13 @@
             <div class="container footer__container">
                 <div class="footer__column">
                     <p class="footer__copyright">&copy; 2020 «Море красоты»</p>
-                    <a class="footer__link" href="#">Политика конфиденциальности</a>
+                    <a class="footer__link link" href="#" target="_blank">Политика конфиденциальности</a>
                 </div>
                 <nav class="navigation footer__nav">
                     <ul class="navigation__list">
-                        <li class="navigation__item"><a href="#about" class="navigation__link navigation_little">Услуги и цены</a></li>
+                        <li class="navigation__item"><a href="#price" class="navigation__link navigation_little">Услуги и цены</a></li>
                         <li class="navigation__item"><a href="#masters" class="navigation__link navigation_little">Мастера</a></li>
-                        <li class="navigation__item"><a href="#price" class="navigation__link navigation_little">Наши работы</a></li>
+                        <li class="navigation__item"><a href="#portfolio" class="navigation__link navigation_little">Наши работы</a></li>
                         <li class="navigation__item"><a href="#contacts" class="navigation__link navigation_little">Контакты</a></li>
                     </ul>
                 </nav>
