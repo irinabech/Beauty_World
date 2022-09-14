@@ -9,6 +9,9 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap-grid.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css">
     <link rel="stylesheet" href="./css/style.css">
 </head>
 <body>
@@ -23,26 +26,26 @@
 
                     <nav class="navigation header__nav">
                         <ul class="navigation__list">
-                            <li class="navigation__item"><a href="#about" class="navigation__link">Услуги и цены</a></li>
+                            <li class="navigation__item"><a href="#price" class="navigation__link">Услуги и цены</a></li>
                             <li class="navigation__item"><a href="#masters" class="navigation__link">Мастера</a></li>
-                            <li class="navigation__item"><a href="#price" class="navigation__link">Наши работы</a></li>
-                            <li class="navigation__item"><a href="#portfolio" class="navigation__link">О нас</a></li>
-                            <li class="navigation__item"><a href="#contacts" class="navigation__link">Контакты</a></li>
+                            <li class="navigation__item"><a href="#porfolio" class="navigation__link">Наши работы</a></li>
+                            <li class="navigation__item"><a href="#about" class="navigation__link">О нас</a></li>
+                            <li class="navigation__item"><a href="#contact" class="navigation__link">Контакты</a></li>
                         </ul>
                     </nav>
 
                     <nav class="mobile-menu">
                         <input type="checkbox" id="checkbox" class="mobile-menu__checkbox">
                         <label for="checkbox" class="mobile-menu__btn"><div class="mobile-menu__icon"></div></label>
-                        <!-- <div class="mobile-menu__container">
-                            <ul class="mobile-menu__list">
-                                <li class="mobile-menu__item"><a href="#" class="mobile-menu__link">Услуги и цены</a></li>
-                                <li class="mobile-menu__item"><a href="#" class="mobile-menu__link">Мастера</a></li>
-                                <li class="mobile-menu__item"><a href="#" class="mobile-menu__link">Наши работы</a></li>
-                                <li class="mobile-menu__item"><a href="#" class="mobile-menu__link">О нас</a></li>
-                                <li class="mobile-menu__item"><a href="#" class="mobile-menu__link">Контакты</a></li>
+                        <div class="mobile-menu__container">
+                            <ul class="mobile-menu__list" id="link">
+                                <li class="mobile-menu__item"><a href="#price" class="mobile-menu__link">Услуги и цены</a></li>
+                                <li class="mobile-menu__item"><a href="#masters" class="mobile-menu__link">Мастера</a></li>
+                                <li class="mobile-menu__item"><a href="#portfolio" class="mobile-menu__link">Наши работы</a></li>
+                                <li class="mobile-menu__item"><a href="#about" class="mobile-menu__link">О нас</a></li>
+                                <li class="mobile-menu__item"><a href="#contact" class="mobile-menu__link">Контакты</a></li>
                             </ul>
-                        </div> -->
+                        </div>
                     </nav>
 
                     <div class="header-phone header__phone">
@@ -72,7 +75,7 @@
         <!----- Main ----->
         <main class="main">
 
-                <section class="about">
+                <section class="about" id="about">
                     <div class="container about__container">
                         <h2 class="about__title title">О салоне</h2>
                         <div class="about__box">
@@ -94,7 +97,7 @@
                     
                 <section class="privilege">
                     <div class="container privilege__container">
-                        <div class="row">
+                        <div class="row privilege__box">
                             <div class="col privilege__column">
                                 <div class="privilege__logo">
                                     <img clas="privilege__img" src="./images/privilege-1.png" alt="">
@@ -126,7 +129,7 @@
                         <div class="popular__box">
                             <div class="popular__column card">
                                 <div class="card__photo">
-                                    <img  class="card_img"src="./images/cards_services/card-1.png" alt="Маникюр"> 
+                                    <img  class="card__img"src="./images/cards_services/card-1.png" alt="Маникюр"> 
                                 </div>   
                                 <h3 class="card__title">Маникюр</h3>
                                 <p class="card__text">Аппаратный, комбинированный или классический.</p>
@@ -134,7 +137,7 @@
                             </div>
                             <div class="popular__column card">
                                 <div class="card__photo">
-                                    <img  class="card_img"src="./images/cards_services/card-1.png" alt="Покрытие гель-лак"> 
+                                    <img  class="card__img"src="./images/cards_services/card-1.png" alt="Покрытие гель-лак"> 
                                 </div> 
                                 <h3 class="card__title">Покрытие гель-лак</h3>
                                 <p class="card__text">Гель-лак наносится в несколько слоев с использование базы и топа. Каждый слой полимеризуется в LED-лампе.</p>
@@ -142,7 +145,7 @@
                             </div>
                             <div class="popular__column card">
                                 <div class="card__photo">
-                                    <img  class="card_img"src="./images/cards_services/card-1.png" alt="Бразильский маникюр">
+                                    <img  class="card__img"src="./images/cards_services/card-1.png" alt="Бразильский маникюр">
                                 </div>
                                 <h3 class="card__title">Бразильский маникюр</h3>
                                 <p class="card__text">Выполняется в одноразовых перчатках наполненных увлажняющим лосьоном.</p>
@@ -150,7 +153,7 @@
                             </div>
                             <div class="popular__column card">
                                 <div class="card__photo">
-                                    <img  class="card_img"src="./images/cards_services/card-1.png" alt="Педикюр"> 
+                                    <img  class="card__img"src="./images/cards_services/card-1.png" alt="Педикюр"> 
                                 </div>
                                 <h3 class="card__title">Педикюр</h3>
                                 <p class="card__text">Аппаратный, комбинированный или классический.</p>
@@ -158,7 +161,7 @@
                             </div>
                             <div class="popular__column card">
                                 <div class="card__photo">
-                                    <img  class="card_img"src="./images/cards_services/card-1.png" alt="Парафинотерапия"> 
+                                    <img  class="card__img"src="./images/cards_services/card-1.png" alt="Парафинотерапия"> 
                                 </div>   
                                 <h3 class="card__title">Парафинотерапия</h3>
                                 <p class="card__text">Благодаря этой процедуре увлажнение кожи увеличивается на 80%, также выводит токсины и укрепляет суставы.
@@ -169,20 +172,21 @@
                     </div>  
                 </section>
 
-                <section class="price">
+                <section class="price" id="price">
                     <div class="container price__container">
                         <h2 class="price__title title">Услуги и цены</h2>
                         <nav class="price__navigation navigation ">
-                            <ul class="navigation__list">
-                                <li class="navigation__item"><a href="" class="navigation__link navigation_active">Стрижка и укладка</a></li>
-                                <li class="navigation__item"><a href="" class="navigation__link navigation_active">Косметология</a></li>
-                                <li class="navigation__item"><a href="" class="navigation__link navigation_active">Маникюр и педикюр</a></li>
-                                <li class="navigation__item"><a href="" class="navigation__link navigation_active">Макияж</a></li>
-                                <li class="navigation__item"><a href="" class="navigation__link navigation_active">Брови и ресницы</a></li>
-                                <li class="navigation__item"><a href="" class="navigation__link navigation_active">Массаж</a></li>
+                            <ul class="navigation__list navigation__list_mobile navigation__list_wrap">
+                                <li class="navigation__item"><a class="navigation__link navigation_active" data-tabs-path="Styling">Стрижка и укладка</a></li>
+                                <li class="navigation__item"><a class="navigation__link navigation_active" data-tabs-path="Cosmetology">Косметология</a></li>
+                                <li class="navigation__item"><a class="navigation__link navigation_active" data-tabs-path="Manicure">Маникюр и педикюр</a></li>
+                                <li class="navigation__item"><a class="navigation__link navigation_active" data-tabs-path="Makeup">Макияж</a></li>
+                                <li class="navigation__item"><a class="navigation__link navigation_active" data-tabs-path="Eyebrows">Брови и ресницы</a></li>
+                                <li class="navigation__item"><a class="navigation__link navigation_active" data-tabs-path="Massage">Массаж</a></li>
                             </ul>
                         </nav>    
-                        <div class="price__box price-box">
+
+                        <div class="price__box price-box" data-tabs-target="Styling">
                             <div class="price-box__column">
                                 <div class="price-box__item">
                                     <div class="price-box__content">
@@ -244,10 +248,121 @@
                                 </div>
                             </div>
                         </div>
+
+                        <div class="price__box price-box" data-tabs-target="Cosmetology">
+                            <div class="price-box__column">
+                                <div class="price-box__item">
+                                    <div class="price-box__content">
+                                        <h3 class="price-box__title">Чистка лица</h3>
+                                        <p class="price-box__text">Комбинированная</p>
+                                    </div>
+                                    <p class="price-box__price">1200 &#8381;</p>
+                                </div>
+                                <div class="price-box__item">
+                                    <div class="price-box__content">
+                                        <h3 class="price-box__title">Чистка лица</h3>
+                                        <p class="price-box__text">Механическая</p>
+                                    </div>
+                                    <p class="price-box__price">1200 &#8381;</p>
+                                </div>
+                                <div class="price-box__item">
+                                    <div class="price-box__content">
+                                        <h3 class="price-box__title">Миндальный пилинг</h3>
+                                        <p class="price-box__text">Пилинг</p>
+                                    </div>
+                                    <p class="price-box__price">1200 &#8381;</p>
+                                </div>
+                                <div class="price-box__item">
+                                    <div class="price-box__content">
+                                        <h3 class="price-box__title">Карбокситерапия</h3>
+                                        <p class="price-box__text">Пилинг</p>
+                                    </div>
+                                    <p class="price-box__price">1200 &#8381;</p>
+                                </div>     
+                            </div>
+                            <div class="price-box__column">
+                                <div class="price-box__item">
+                                    <div class="price-box__content">
+                                        <h3 class="price-box__title">Массаж лица</h1>
+                                        <p class="price-box__text">Классический</p>
+                                    </div>
+                                    <p class="price-box__price">1200 &#8381;</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="price__box price-box" data-tabs-target="Manicure">
+                            <div class="price-box__column">
+                                <div class="price-box__item">
+                                    <div class="price-box__content">
+                                        <h3 class="price-box__title">Маникюр</h3>
+                                        <p class="price-box__text">Классический</p>
+                                    </div>
+                                    <p class="price-box__price">1200 &#8381;</p>
+                                </div>
+                                <div class="price-box__item">
+                                    <div class="price-box__content">
+                                        <h3 class="price-box__title">Маникюр</h3>
+                                        <p class="price-box__text">Гелевое покрытие</p>
+                                    </div>
+                                    <p class="price-box__price">1200 &#8381;</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="price__box price-box" data-tabs-target="Makeup">
+                            <div class="price-box__column">
+                                <div class="price-box__item">
+                                    <div class="price-box__content">
+                                        <h3 class="price-box__title">Макияж</h3>
+                                        <p class="price-box__text">Вечерний</p>
+                                    </div>
+                                    <p class="price-box__price">1200 &#8381;</p>
+                                </div>
+                                <div class="price-box__item">
+                                    <div class="price-box__content">
+                                        <h3 class="price-box__title">Макияж</h3>
+                                        <p class="price-box__text">Дневной</p>
+                                    </div>
+                                    <p class="price-box__price">1200 &#8381;</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="price__box price-box" data-tabs-target="Eyebrows">
+                            <div class="price-box__column">
+                                <div class="price-box__item">
+                                    <div class="price-box__content">
+                                        <h3 class="price-box__title">Ламинирование</h3>
+                                        <p class="price-box__text">Брови</p>
+                                    </div>
+                                    <p class="price-box__price">1200 &#8381;</p>
+                                </div>
+                                <div class="price-box__item">
+                                    <div class="price-box__content">
+                                        <h3 class="price-box__title">Ламинирование</h3>
+                                        <p class="price-box__text">Брови + ресницы</p>
+                                    </div>
+                                    <p class="price-box__price">1200 &#8381;</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="price__box price-box" data-tabs-target="Massage">
+                            <div class="price-box__column">
+                                <div class="price-box__item">
+                                    <div class="price-box__content">
+                                        <h3 class="price-box__title">Массаж классический</h3>
+                                        <p class="price-box__text">Спина, шея, руки</p>
+                                    </div>
+                                    <p class="price-box__price">1200 &#8381;</p>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </section>
 
-                <section class="masters masters_gray">
+                <section class="masters masters_gray" id="masters">
                     <div class="container masters__container">
                         <h2 class="masters__title title">Мастера</h2>
                         <p class="masters__subtitle">Дружная команда настоящих профессионалов</p>
@@ -288,12 +403,18 @@
                     </div>
                 </section>
                 
-                <section class="portfolio">
+                <section class="portfolio" id="portfolio">
                     <div class="container">
                         <div class="portfolio__top">
                             <h1 class="portfolio__title title">Наши работы</h1>
+                    
                             <div class="portfolio__buttons">
                                 <button class="portfolio__btn portfolio__btn_back"></button>
+
+                                <button class="portfolio__btn portfolio__btn__next"></button> 
+                            </div>
+                        </div>
+
                                 <button class="portfolio__btn"></button>
                             </div>
                         </div>
@@ -311,7 +432,45 @@
                         <div class="portfolio__item">
                             <img  class="portfolio__img" src="./images/portfolio/card-4.jpg" alt="">
                         </div>
+
                     </div>
+                            <div class="portfolio__box">     
+                                <div class="portfolio__item">   
+                                    <a data-fancybox="gallery" href="./images/portfolio/card-1.jpg">
+                                        <div class="portfolio__overlay"></div>
+                                        <img  class="portfolio__img" src="./images/portfolio/card-1.jpg" alt="">
+                                    </a>
+                                </div>                      
+                            
+                                <div class="portfolio__item">
+                                    <a data-fancybox="gallery" href="./images/portfolio/card-2.jpg">
+                                        <div class="portfolio__overlay"></div>
+                                        <img  class="portfolio__img" src="./images/portfolio/card-2.jpg" alt="">
+                                    </a>
+                                </div>
+        
+                                <div class="portfolio__item">
+                                    <a data-fancybox="gallery" href="./images/portfolio/card-3.jpg">
+                                        <div class="portfolio__overlay"></div>
+                                        <img  class="portfolio__img" src="./images/portfolio/card-3.jpg" alt="">
+                                    </a>
+                                </div>
+                        
+                                <div class="portfolio__item">
+                                    <a data-fancybox="gallery" href="./images/portfolio/card-4.jpg">
+                                        <div class="portfolio__overlay"></div>
+                                        <img  class="portfolio__img" src="./images/portfolio/card-4.jpg" alt="">
+                                    </a>
+                                </div>
+                
+                                <div class="portfolio__item">    
+                                    <a data-fancybox="gallery" href="./images/portfolio/card-2.jpg">
+                                        <div class="portfolio__overlay"></div>
+                                        <img  class="portfolio__img" src="./images/portfolio/card-2.jpg" alt="">
+                                    </a>
+                                </div>
+
+                            </div>
                 </section>
 
                 <section class="brands">
@@ -327,7 +486,7 @@
                     </div>
                 </section>
 
-                <section class="contact contact_gray">
+                <section class="contact contact_gray" id="contact">
                     <div class="container">
                         <div class="contact__box">
                             <div class="contact__content">
@@ -343,7 +502,7 @@
                                     </ul>
                                 </div>
                             </div>
-                            <form class="contact-form" action="">
+                            <form class="contact-form" action="" id="form">
                                     <div class="contact-form__box">
                                         <div class="contact-form__title">
                                             Быстрая запись
@@ -354,6 +513,7 @@
                                         <input class="contact-form__input" type="text" name="name" placeholder="Ваше имя" required>
                                         <input class="contact-form__input" type="tel" name="phone" placeholder="+7 (___) ___-__-__" inputmode="tel" required>
                                         <button class="btn btn_long">Записаться</button>
+
                                         <div class="contact-form__approval">
                                             Нажимая на кнопку вы соглашаетесь <a class="link" href="#" target="_blank">с обработкой персональных данных</a>
                                         </div>
@@ -373,8 +533,13 @@
                     <a class="footer__link link" href="#" target="_blank">Политика конфиденциальности</a>
                 </div>
                 <nav class="navigation footer__nav">
-                    <ul class="navigation__list">
+
+                    <ul class="navigation__list navigation__list_mobile">
+                        <li class="navigation__item"><a href="#about" class="navigation__link navigation_little">Услуги и цены</a></li>
+
+                   
                         <li class="navigation__item"><a href="#price" class="navigation__link navigation_little">Услуги и цены</a></li>
+
                         <li class="navigation__item"><a href="#masters" class="navigation__link navigation_little">Мастера</a></li>
                         <li class="navigation__item"><a href="#portfolio" class="navigation__link navigation_little">Наши работы</a></li>
                         <li class="navigation__item"><a href="#contacts" class="navigation__link navigation_little">Контакты</a></li>
@@ -384,5 +549,10 @@
         </footer>
     </div>
 
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script> 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js"></script> 
+    <script src="./index.js"></script>
+    
 </body>
 </html>

@@ -151,10 +151,10 @@ section {
 
 .mobile-menu {
     display: none;
-
+    
     @include _768() {
         display: block;
-        position: absolute;
+        position: fixed;
         display: flex;
         align-items: center;
         justify-content: flex-end;
@@ -208,6 +208,44 @@ section {
     &__checkbox {
         display: none;
     }
+
+    &__container {
+        position: fixed;
+        text-align: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 3;
+        height: 0;
+        opacity: 1;
+        transition: .5s;
+        overflow: hidden;
+        background-color: $white;
+    }
+
+    &__list {
+        transition: .5s;
+        list-style: none;
+        padding-left: 0;
+        margin-top: -50px;
+    }
+
+    &__item {
+        font-size: 38px;
+        padding-bottom: 28px;
+    }
+
+    &__link {
+        text-decoration: none;
+        color: $brown;
+    }
+
+    .active {
+        height: 100%;
+    }
 }
 
 .navigation {
@@ -216,6 +254,19 @@ section {
         padding: 0;
         margin: 0;
         display: flex; 
+    }
+
+    &__list_mobile {
+        @include _480 {
+            flex-direction: column;
+        }
+    }
+
+    &__list_wrap {
+        @include _620 {
+            flex-wrap: wrap;
+            gap: 5px;
+        }
     }
 
     &__item:not(:last-child) {
@@ -233,7 +284,7 @@ section {
         color: $green;
     }
 
-    &_active:active {
+    &_active-btn {
         color: $green;
         text-decoration: underline;
         text-underline-position: under;
@@ -270,6 +321,10 @@ section {
         font-size: 36px;
         line-height: 44px;
     }
+
+    @include _620() {
+        text-align: center;
+    }
 }
 
 .btn {
@@ -302,49 +357,9 @@ section {
     }
 }
 
-.about { 
-    &__box {
-        display: flex;
-    }
-    
-    &__title {
-        margin-bottom: 32px;
-    }
-    
-    &__subtitle {
-        max-width: 569px;
-        font-size: 20px;
-        line-height: 32px;
-        padding-bottom: 16px;
-    }
-    
-    &__text {
-        max-width: 538px;
-        line-height: 26px;
-        padding-bottom: 16px;
-    }
-    
-    &__content {
-        margin-right: 95px;
-    }
-
-    &__videobox {
-        position: relative;
-    }
-
-    &__btn {
-        padding: 0 0;
-        color: $blue;
-        background-color: transparent;
-        border: none;
-        font-size: $mittel;
-        cursor: pointer;
-    }
-}
-
 .videobox {
     padding: 0 0;
-    width: 445px;
+    max-width: 445px;
     height: 297px;
     border-radius: 10px;
     overflow: hidden;
@@ -375,6 +390,7 @@ section {
         background: url("../images/icon_play.svg") no-repeat center;
         z-index: 3;
         transition: 0.15s;
+        cursor: pointer;
     }
 
     &:after {
@@ -401,13 +417,64 @@ section {
     }
 }
 
-.privilege {
-    &__column {
-    max-width: 350px;
+.about { 
+    &__box {
+        display: flex;
+
+        @include _768() {
+            flex-direction: column;
+            align-items: center;
+        }
+    }
+    
+    &__title {
+        margin-bottom: 32px;
+    }
+    
+    &__subtitle {
+        max-width: 569px;
+        font-size: 20px;
+        line-height: 32px;
+        padding-bottom: 16px;
+    }
+    
+    &__text {
+        max-width: 538px;
+        line-height: 26px;
+        padding-bottom: 16px;
+    }
+    
+    &__content {
+        margin-right: 95px;
+
+        @include _768() {
+            margin: 0 auto 20px;
+        }
     }
 
-    &__column:not(:last-child) {
-        margin-right: 30px;
+    &__videobox {
+        position: relative;
+    }
+
+    &__btn {
+        padding: 0 0;
+        color: $blue;
+        background-color: transparent;
+        border: none;
+        font-size: $mittel;
+        cursor: pointer;
+    }
+}
+
+.privilege {
+    &__column {
+        max-width: 350px;
+        min-width: 250px;
+    }
+
+    &__box {
+        gap: 20px 30px;
+        justify-content: space-around;
     }
 
     &__title,
@@ -440,6 +507,10 @@ section {
         display: flex;
         flex-wrap: wrap;
         gap: 48px 30px;
+
+        @include _992(){
+            justify-content: space-around;
+        }
     }
 
     &__column {
@@ -477,11 +548,21 @@ section {
 .price {
     .price-box {
         max-width: 1015px;
+        display: none;
+
+        &_active {
+            display: flex;
+        }
         
         &__title {
             font-size: 18px;
             font-weight: 500;
             margin-bottom: 8px;
+
+            @include _480() {
+                font-size: 16px;
+                
+            }
         }
 
         &__text {
@@ -492,6 +573,12 @@ section {
             font-size: 20px;
             font-weight: 600;
             color: $green;
+            white-space: nowrap;
+
+            @include _480() {
+                font-size: 18px;
+                padding-left: 10px;
+            }
         } 
 
         &__column {
@@ -507,6 +594,11 @@ section {
 
     &__box {
         gap: 0 125px;
+        
+        @include _768() {
+            gap: 32px;
+            flex-direction: column;
+        }
     }
 
     .price-box__item:not(:last-child),
@@ -531,12 +623,20 @@ section {
     
     &__subtitle {
         margin-bottom: 24px;
+
+        @include _620 () {
+            text-align: center;
+        }
     }
     
     &__box {
         display: flex;
         flex-wrap: wrap;
         gap: 20px 30px;
+
+        @include _992() {
+            justify-content: space-around;
+        }
     } 
     
     &_gray {
@@ -656,11 +756,12 @@ section {
         transform: rotate(180deg);
         margin-right: 16px;
     }
-    
+
     &__box {
         max-width: 1440px;
         margin: 52px auto;
         display: flex;
+
         justify-content: space-around;
         gap: 29px;
     }
@@ -684,6 +785,23 @@ section {
         height: 100%;
         object-fit: cover;
     }
+ 
+    &__overlay {
+        height: 100%;
+        width: 100%;
+        position: absolute;
+    }
+    
+    &__overlay:hover {
+        transform: scale(1.1);
+        background: #000;
+        opacity: 0.5;
+        border-radius: 8px;
+        z-index: 3;
+    }
+    
+    &__overlay:hover::before {
+        content: "";
 
     &__item:hover::before {
         content: "";    
@@ -695,21 +813,35 @@ section {
         right: 50%;
         transform: translateX(50%);
         top: 149px;
-        z-index: 3;
+        z-index: 4;
+        
     }
     
+
+    &__overlay:hover::after {
+        content: "Увеличить";
+
     &__item:hover::after {
         content: 'Увеличить';
         position: absolute;
         width: 100%;
         height: 100%;
-        padding-top: 205px; 
-        top: 0;
-        right: 0;
-        bottom: 0;
-        left: 0;      
+        padding-top: 205px;      
         font-size: $mittel;
         font-weight: 500;
+
+        line-height: 17px;
+        top: 205px;
+        right: 50%;
+        transform: translateX(50%);
+        z-index: 4;
+    }
+
+    .slick-track {
+        display: flex;
+        justify-content: space-between;
+        gap: 29px;
+
         text-align: center;
         background: rgba(0, 0, 0, 0.5);
         color: $white;
@@ -736,10 +868,6 @@ section {
         object-fit: contain;
         opacity: 0.3;
     }
-    
-    &__logo:not(:last-child) {
-        margin-right: 30px;
-    }
 }
 
 .contact {
@@ -752,6 +880,11 @@ section {
         padding: 40px 0 40px;
         display: flex;
         justify-content: space-between;
+
+        @include _768(){
+            flex-direction: column;
+            align-items: center;
+        }
     }
     
     &__title {
@@ -773,6 +906,10 @@ section {
         gap: 0 24px;
         position: relative;
         margin-top: 58px;
+
+        @include _768() {
+            justify-content: center;
+        }
     }
 
     &__social:before {
@@ -781,6 +918,13 @@ section {
         font-size: $cicero;
         line-height: $mittel;
         top: -26px;
+    }
+
+    &__content {
+        @include _768() {
+            text-align: center;
+            order: 2;
+        }
     }
 
     .contact-form {
@@ -830,6 +974,17 @@ section {
         display: flex;
         justify-content: space-between;
         align-items: center;
+
+        @include _620() {
+            flex-direction: column;
+        }
+    }
+
+    &__column {
+        @include _620() {
+            order: 2;
+            margin-top: 15px;
+        }
     }
     
     &__copyright {
